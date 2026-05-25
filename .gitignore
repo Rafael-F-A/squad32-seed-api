@@ -1,20 +1,50 @@
-# Ambiente virtual
+# Ambientes virtuais
 venv/
+env/
+.venv/
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.so
+.Python
 
-# Arquivos de configuração local
+# Arquivos de configuração com credenciais
 .env
-*.log
+*.env
+*.key
+*.pem
 
-# Banco de dados local (se tiver)
+# Banco de dados local
 *.db
 *.sqlite
+*.sqlite3
 
-# IDE
+# IDEs
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Logs e dados temporários
+*.log
+*.tmp
+*.bak
+
+# Arquivos de build / distribuição
+dist/
+build/
+*.egg-info/
+*.egg
 
 # Sistema operacional
 Thumbs.db
 .DS_Store
+
+# Arquivos de configuração de testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Arquivos de dados gerados localmente
+*.sqlite
