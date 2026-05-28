@@ -56,6 +56,20 @@ class ProvaResponse(ProvaBase):
     class Config:
         from_attributes = True
 
+class ProvaUpdate(BaseModel):
+    titulo: Optional[str] = None
+    descricao: Optional[str] = None
+    nivel: Optional[str] = None
+    serie: Optional[str] = None
+    tipo: Optional[str] = None
+    nota_minima: Optional[float] = None
+    tempo_limite: Optional[int] = None
+    data_inicio_inscricao: Optional[datetime] = None
+    data_fim_inscricao: Optional[datetime] = None
+
+class MensagemResponse(BaseModel):
+    message: str
+    
 # Questões
 class AlternativaBase(BaseModel):
     texto: str

@@ -3,10 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import get_db
 from sqlalchemy.orm import Session
 from app import models
-from app.routers import auth, questoes, simulados
+from app.routers import auth, questoes, simulados, provas
 from dotenv import load_dotenv
 
-# Carrega variáveis do .env
 load_dotenv()
 
 app = FastAPI(
@@ -15,7 +14,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Configuração CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -28,6 +26,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(questoes.router)
 app.include_router(simulados.router)
+app.include_router(provas.router)
 
 # ENDPOINTS PÚBLICOS
 @app.get("/")
